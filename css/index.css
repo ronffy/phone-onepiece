@@ -1,0 +1,307 @@
+@charset "UTF-8";
+body.showNav{
+	overflow: hidden;
+}
+.opa-bg-5{
+	background: rgba(255,255,255,.5);
+}
+.bg-hongrou{
+	background: #fb5259;
+}
+.bg-huangrou{
+	background: #fea410;
+}
+.bg-lvrou{
+	background: #18bd9b;
+}
+.color-hongrou{
+	color: #fb5259;
+}
+.color-huangrou{
+	color: #fea410;
+}
+.color-lvrou{
+	color: #18bd9b;
+}
+/*整体布局*/
+.index-bg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: 100% 100%;
+	opacity: .7;
+}
+.index-con{
+	position: relative;
+	width: 100%;
+	z-index: 2;
+	right: 0;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+.index-con.active{
+	right: 13rem;
+}
+.con-opacity-bg{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background: rgba(0,0,0,0);
+	z-index: 9999;
+}
+.con-opacity-bg.active{
+	display: block;
+}
+.right-nav{
+	position: fixed;
+	top: 0;
+	right: -13rem;
+	width: 13rem;
+	height: 100%;
+	overflow: auto;
+	background: #393939;
+	color: #dcdcdc;
+	z-index: 10001;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+.right-nav.active{
+	right: 0;
+}
+.right-nav h3,
+.right-nav li{
+	width: 100%;
+	text-align: center;
+}
+.icon-right-nav{
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+	background: url(../images/ico-nav.png) no-repeat;
+	background-size: 100% 100%;
+	opacity: .8;
+}
+/*音乐*/
+.index-audio{
+	position: fixed;
+	left: 10px;
+	top: 10px;
+	z-index: 10005;
+}
+.icon-btn-music.active{
+	background: url(../images/icon-btn-music-open.png) no-repeat;
+	background-size: 100% 100%;
+}
+.icon-btn-music{
+	display: block;
+	width: 1.8rem;
+	height: 2rem;
+	background: url(../images/icon-btn-music-close.png) no-repeat;
+	background-size: 100% 100%;
+	opacity: .6;
+}
+
+/*右侧导航的开关按钮*/
+.btn-right-nav{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 3;
+}
+.btn-right-nav a{
+	color: #fff;
+}
+/*banner*/
+.banner{
+	overflow: hidden;
+	background: #B1191A;
+}
+.banner .swiper-slide{
+	/*float: left;*/
+}
+.banner-swiper01 {
+	height: 70%;
+	width: 100%;
+	overflow: hidden;
+}
+.banner-swiper02 {
+	margin-top: 2%;
+	height: 27%;
+	/*width: 100%;*/
+	overflow: hidden;
+	margin-bottom: 2%;
+}
+/*tab*/
+.index-tab{
+	width: 100%;
+	overflow: hidden;
+}
+.index-tab .tabs{
+	display: flex;
+	width: 100%;
+	display: -webkit-flex;
+	background: #ed2e38;
+
+}
+.index-tab .tabs a{
+	padding: 10px 0;
+	flex: 1;
+	webkit-flex: 1;
+	font-size: 1rem;
+	color: #fff;
+	text-align: center;
+}
+.index-tab .tabs a.active{
+	background: #B1191A;
+}
+.index-tab .tabs-container{
+	color: #333;
+	background: transparent;
+}
+.index-tab .news-list li{
+	position: relative;
+	margin-top: 15px;
+	letter-spacing: 2px;
+	line-height: 25px;
+	font-size: .9rem;
+}
+.index-tab .content-slide{
+	padding: 0 15px 15px;
+}
+.index-tab .news-list li p{
+	display: block;
+	width: 100%;
+	height: 13rem;
+	border-radius: 2px;
+}
+
+.index-tab .animate-li div.ani{
+	position:absolute;
+	width:100%;
+	height:auto;
+	left:0;
+	top:0;
+	z-index:3;
+}
+.index-tab .animate-li div.ani img.ani.infinite{
+	position:absolute ;
+	width:2.4rem;
+	height:auto;
+	bottom:5px;
+	z-index:4;
+}
+.index-tab .animate-li01 div.ani img.ani.infinite{
+	right:15px;
+}
+.index-tab .animate-li02 div.ani img.ani.infinite{
+	left: 15px;
+}
+.index-tab .animate-li03 div.ani img.ani.infinite{
+	right:15px;
+}
+.index-tab .animate-li div.ani span.ani{
+	position:absolute; 
+	padding: 15px;
+	font-size:1.7rem; 
+	color:#fff; 
+	text-align:center;
+	width:100%;
+	height:auto;
+	left:0;
+	z-index:4;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.index-tab .animate-li div.ani span.firstSpan{
+	top: 2.2rem;
+}
+.index-tab .animate-li div.ani span.secondSpan{
+	top: 6rem;
+}
+.index-tab .animate-li03 div.ani span.ani{
+	font-size: 1.4rem;
+}
+/*背景图浮动*/
+.index-bgslide{
+	position: relative;
+	margin: 0 auto;
+	width:92%;
+	height:12.3rem;
+	background:transparent;
+	overflow: hidden;
+}
+.index-bgslide .parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    background:url(../images/sea-bg.jpg) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+.bgslide-hzw-img{
+	width: 15%;
+	position: absolute;
+	top: 6rem;
+}
+.bgslide-hzw-lf{
+	right: .6rem;
+}
+.bgslide-hzw-sl{
+	width: 14%;
+	top: 5.7rem;
+	right: 3.3rem;
+}
+.bgslide-hzw-nm{
+	width: 9%;
+	top: 5.9rem;
+	right: 6rem;
+}
+.bgslide-hzw-wsp{
+	width: 11%;
+	top: 5.8rem;
+	right: 7.4rem;
+}
+.bgslide-hzw-xjs{
+	width: 11%;
+	top: 6.3rem;
+	right: 9.9rem;
+}
+.bgslide-hzw-lb{
+	width: 7%;
+	top: 6.2rem;
+	right: 12.2rem;
+}
+.bgslide-hzw-qb{
+	width: 9%;
+	top: 100rem;
+	right: 14.2rem;
+}
+.bgslide-hzw-flq{
+	width: 21%;
+	top: 5.2rem;
+	right: 16.5rem;
+}
+.bgslide-hzw-brk{
+	width: 12%;
+	top: 4.6rem;
+	right: 14rem;
+}
+{
+	display: flex;
+	flex:1;
+}
