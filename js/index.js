@@ -6,12 +6,12 @@
 $(function(){
 	var indexFn = {
 		valiable:{
-			btn_nav:$(".btn-right-nav"), //右上角nav按钮
+			btn_nav:$("#btn-right-nav"), //右上角nav按钮
 			btn_audio:$(".js-btn-audio"), //音乐开关按钮
 			src_music : "i.icon-btn-music", // 音乐图标
-			opacity_bg: ".con-opacity-bg", //打开nav后出现的透明背景层
-			right_nav_con:".right-nav", //隐藏的右侧nav容器
-			index_con:".index-con", //主页面
+			opacity_bg: $(".con-opacity-bg"), //打开nav后出现的透明背景层
+			right_nav_con:$(".right-nav"), //隐藏的右侧nav容器
+			index_con:$(".index-con"), //主页面
 			big_bannerswiper:".banner-swiper01", //大banner的容器
 			sm_bannerswiper:".banner-swiper02" //小banner的容器
 		},
@@ -24,30 +24,34 @@ $(function(){
 			this.tabCss3(); //tab的css3效果
 		},
 		openNav:function(){
-			indexFn.valiable.btn_nav.tap(function(){
-				$(indexFn.valiable.opacity_bg+","+indexFn.valiable.right_nav_con+","+indexFn.valiable.index_con).addClass("active");
-				$("body").addClass("showNav");
+			var valiable = indexFn.valiable;
+			valiable.btn_nav.tap(function(){
+				$(this).add(valiable.opacity_bg).add(valiable.right_nav_con).add(valiable.index_con).toggleClass("active");
+				$("body").toggleClass("showNav");
 			});
 		},
 		btnAudio:function(){
-			indexFn.valiable.btn_audio.tap(function(){
-				$(this).find(indexFn.valiable.src_music).toggleClass("active");
-				var audio=$("#jsAudio")[0];
+			var valiable = indexFn.valiable,
+				src_music = valiable.src_music;
+			valiable.btn_audio.tap(function(){
+				$(this).find(src_music).toggleClass("active");
+				var audio = $("#jsAudio")[0];
 				var btnSwitch = $(this).attr("data-switch");
 				if(btnSwitch == "close"){
 					$(this).attr("data-switch","open");
 					audio.play();
-					$(this).find(indexFn.valiable.src_music).addClass("active");
+					$(this).find(src_music).addClass("active");
 				}else{
 					$(this).attr("data-switch","close");
 					audio.pause();
-					$(this).find(indexFn.valiable.src_music).removeClass("active");
+					$(this).find(src_music).removeClass("active");
 				}
 			});
 		},
 		closeNav:function(){
-			$(indexFn.valiable.opacity_bg+","+indexFn.valiable.right_nav_con).on("swipeRight",function(){
-				$(indexFn.valiable.opacity_bg+","+indexFn.valiable.right_nav_con+","+indexFn.valiable.index_con).removeClass("active");
+			var valiable = indexFn.valiable;
+			valiable.opacity_bg.add(valiable.right_nav_con).on("swipeRight",function(){
+				valiable.btn_nav.add(valiable.opacity_bg).add(valiable.right_nav_con).add(valiable.index_con).removeClass("active");
 				$("body").removeClass("showNav");
 			});
 		},

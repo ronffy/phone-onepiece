@@ -117,7 +117,15 @@ body.showNav{
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	z-index: 3;
+	z-index: 10001;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.btn-right-nav.active{
+	right: 13.5rem;
 }
 .btn-right-nav a{
 	color: #fff;
